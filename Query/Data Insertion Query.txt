@@ -1,0 +1,184 @@
+1. INSERT INTO Address (City, Country) VALUES ('New York', 'USA');
+   INSERT INTO Address (City, Country) VALUES ('London', 'UK');
+   INSERT INTO Address (City, Country) VALUES ('Paris', 'France');
+   INSERT INTO Address (City, Country) VALUES ('Delhi', 'India');
+
+select*
+from Address;
+
+2. INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1001, '+16468146310');
+
+INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1002, '+442073777000');
+
+
+INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1003, '+33142494949');
+
+
+INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1004, '+913322298787');
+
+
+INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1004, '+913340116800');
+
+
+INSERT INTO Phone_Number(Customer_ID, Phone) 
+   VALUES (1005, '+00966502186178');
+
+select *
+from Phone_Number;
+
+
+3. INSERT INTO Customer (Customer_ID, Customer_Name, City, Email, Payment_Info) 
+   VALUES (1001, 'John Doe', 'New York', 'john.doe@email.com', 'Credit Card:  3141592653589793');
+   
+INSERT INTO Customer (Customer_ID, Customer_Name, City, Email, Payment_Info) 
+   VALUES (1002, 'Jane Smith', 'London', 'jane.smith@email.com', 'Pioneer:  jane.smith@email.com');
+
+INSERT INTO Customer (Customer_ID, Customer_Name, City, Email, Payment_Info) 
+   VALUES (1003, 'Bob Johnson', 'Paris', 'bob.johnson@email.com', 'PayPal:  bob.johnson@email.com');
+
+INSERT INTO Customer (Customer_ID, Customer_Name, City, Email, Payment_Info) 
+   VALUES (1004, 'Rakesh', 'Delhi', 'rakeshin@yahoo.com', 'Paytm: 012044656456');
+
+INSERT INTO Customer (Customer_ID, Customer_Name, Email, Payment_Info) 
+   VALUES (1005, 'Abdullah', 'Abdulla.12 @gmail.com', 'Bank A/C: 98765432');
+
+
+
+select *
+from Customer;
+
+4.INSERT INTO DC_Link(Domain_ID, Customer_ID, Domain_Name, Registration_Date, Expiration_Date, Renewal_Status) 
+   VALUES (200001, 1003, 'bobwings.com', '01-JAN-22', '10-DEC-24', 'Renewed');
+
+INSERT INTO DC_Link(Domain_ID, Customer_ID, Domain_Name, Registration_Date, Expiration_Date, Renewal_Status) 
+   VALUES (200002, 1005, 'abdwiz.xyz', '14-SEP-19', '10-NOV-22', 'Not Renewed');
+
+INSERT INTO DC_Link(Domain_ID, Customer_ID, Domain_Name, Registration_Date, Expiration_Date, Renewal_Status) 
+   VALUES (200003, 1001, 'doejohn.com', '15-AUG-2015', '01-MAY-23', 'Renewal Pending');
+
+
+INSERT INTO DC_Link(Domain_ID, Customer_ID, Domain_Name, Registration_Date, Expiration_Date, Renewal_Status) 
+   VALUES (200004, 1004, 'wingsman.org', '14-MAY-23', '05-AUG-24', 'Renewed');
+
+
+INSERT INTO DC_Link(Domain_ID, Customer_ID, Domain_Name, Registration_Date, Expiration_Date, Renewal_Status) 
+   VALUES (200005, 1002, 'codeyssey.com', '28-DEC-15', '23-DEC-21', 'Not Renewed');
+
+
+SELECT *
+FROM DC_LINK;
+
+
+5. INSERT INTO Domain(Domain_ID, Domain_Name, Expiration_Date, Renewal_Status) 
+   VALUES (200001, 'bobwings.com', '10-DEC-24', 'Renewed');
+
+INSERT INTO Domain(Domain_ID, Domain_Name, Expiration_Date, Renewal_Status) 
+   VALUES (200002, 'abdwiz.xyz', '10-NOV-22', 'Not Renewed');
+
+INSERT INTO Domain(Domain_ID, Domain_Name, Expiration_Date, Renewal_Status) 
+   VALUES (200003, 'doejohn.com', '01-MAY-23', 'Renewal Pending');
+
+INSERT INTO Domain(Domain_ID, Domain_Name, Expiration_Date, Renewal_Status) 
+   VALUES (200004, 'wingsman.org', '05-AUG-24', 'Renewed');
+
+INSERT INTO Domain(Domain_ID, Domain_Name, Expiration_Date, Renewal_Status) 
+   VALUES (200005, 'codeyssey.com', '23-DEC-21', 'Not Renewed');
+
+SELECT *
+FROM DOMAIN;
+
+6. INSERT INTO Hosting_Account(Account_ID, Account_Status) 
+   VALUES (9001, 'Inactive');
+
+INSERT INTO Hosting_Account(Account_ID, Account_Status) 
+   VALUES (9002, 'Inactive');
+
+INSERT INTO Hosting_Account(Account_ID, Account_Status) 
+   VALUES (9003, 'Active');
+
+INSERT INTO Hosting_Account(Account_ID, Account_Status) 
+   VALUES (9004, 'Active');
+
+INSERT INTO Hosting_Account(Account_ID, Account_Status) 
+   VALUES (9005, 'Active');
+
+SELECT *
+FROM Hosting_Account;
+
+
+7. INSERT INTO DHA_Link(Domain_ID, Account_ID) 
+   VALUES (200002, 9001);
+
+INSERT INTO DHA_Link(Domain_ID, Account_ID) 
+   VALUES (200005, 9002);
+
+INSERT INTO DHA_Link(Domain_ID, Account_ID) 
+   VALUES (200004, 9003);
+
+INSERT INTO DHA_Link(Domain_ID, Account_ID) 
+   VALUES (200001, 9004);
+
+INSERT INTO DHA_Link(Domain_ID, Account_ID) 
+   VALUES (200003, 9005);
+
+SELECT *
+FROM DHA_Link;
+
+
+8. INSERT INTO CHA_Link(Account_ID, Customer_ID, Account_Status) 
+   VALUES (9001, 1005, 'Inactive');
+
+INSERT INTO CHA_Link(Account_ID, Customer_ID, Account_Status) 
+   VALUES (9002, 1002, 'Inactive');
+
+INSERT INTO CHA_Link(Account_ID, Customer_ID, Account_Status) 
+   VALUES (9003, 1004, 'Active');
+
+INSERT INTO CHA_Link(Account_ID, Customer_ID, Account_Status) 
+   VALUES (9004, 1003, 'Active');
+
+INSERT INTO CHA_Link(Account_ID, Customer_ID, Account_Status) 
+   VALUES (9005, 1001, 'Active');
+
+SELECT *
+FROM CHA_Link;
+
+
+9. INSERT INTO Hosting_Plan(Plan_ID, Plan_Name, Description, Price, Features) 
+   VALUES (301, 'Basic', 'Ideal for personal websites and small businesses with low traffic.', 9.99, '10GB storage, SSL Certified, 10 Email, Basic website builder');
+
+INSERT INTO Hosting_Plan(Plan_ID, Plan_Name, Description, Price, Features) 
+   VALUES (302, 'Basic Plus', 'Designed for businesses with moderate traffic', 19.99, '20GB storage, SSL Certified, 30 Email, Basic website builder');
+
+INSERT INTO Hosting_Plan(Plan_ID, Plan_Name, Price, Features) 
+   VALUES (303, 'Standard', 29.99, '50GB storage, SSL Certified, 50 Email, Advanced website builder');
+
+INSERT INTO Hosting_Plan(Plan_ID, Plan_Name, Description, Price, Features) 
+   VALUES (304, 'Premium', 'Suitable for high-traffic websites and e-commerce stores.', 39.99, '100GB storage, SSL Certified, Unlimited Email, Priority customer support, Premium website builder');
+
+SELECT *
+FROM Hosting_Plan;
+
+
+10. INSERT INTO PHA_Link(Account_ID, Plan_ID, Account_Status) 
+   VALUES (9001, 302, 'Inactive');
+
+INSERT INTO PHA_Link(Account_ID, Plan_ID, Account_Status) 
+   VALUES (9002, 301, 'Inactive');
+
+INSERT INTO PHA_Link(Account_ID, Plan_ID, Account_Status) 
+   VALUES (9003, 302, 'Active');
+
+INSERT INTO PHA_Link(Account_ID, Plan_ID, Account_Status) 
+   VALUES (9004, 302, 'Active');
+
+INSERT INTO PHA_Link(Account_ID, Plan_ID, Account_Status) 
+   VALUES (9005, 304, 'Active');
+
+SELECT *
+FROM PHA_Link;

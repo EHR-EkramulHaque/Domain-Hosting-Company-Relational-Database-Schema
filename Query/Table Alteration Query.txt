@@ -1,0 +1,38 @@
+Address Table:
+ALTER TABLE Address MODIFY Country NOT NULL;
+
+Customer Table:
+ALTER TABLE Customer MODIFY Customer_Name NOT NULL;
+ALTER TABLE Customer MODIFY Payment_Info NOT NULL;
+ALTER TABLE Customer MODIFY Email NOT NULL;
+
+DC_Link:
+ALTER TABLE DC_Link MODIFY Renewal_Status NOT NULL;
+ALTER TABLE DC_Link MODIFY Expiration_Date NOT NULL;
+ALTER TABLE DC_Link MODIFY Registration_Date NOT NULL;
+ALTER TABLE DC_Link MODIFY Domain_Name NOT NULL;
+ALTER TABLE DC_Link MODIFY Customer_ID NOT NULL;
+alter table DC_Link add constraint UQ_DC_Link UNIQUE (Domain_Name);
+
+Domain table:
+ALTER TABLE Domain MODIFY Renewal_Status NOT NULL;
+ALTER TABLE Domain MODIFY Expiration_Date NOT NULL;
+ALTER TABLE Domain MODIFY Domain_Name NOT NULL;
+alter table Domain add constraint UQ_DC_Link UNIQUE (Domain_Name);
+
+Hosting_Account Table:
+ALTER TABLE Hosting_Account MODIFY Account_Status NOT NULL;
+
+CHA_Link Table:
+ALTER TABLE CHA_Link MODIFY Account_Status NOT NULL;
+ALTER TABLE CHA_Link MODIFY Customer_ID NOT NULL;
+
+Hosting_Plan Table:
+ALTER TABLE Hosting_Plan MODIFY Features NOT NULL;
+ALTER TABLE Hosting_Plan MODIFY Price NOT NULL;
+ALTER TABLE Hosting_Plan MODIFY Plan_Name NOT NULL;
+ALTER TABLE Hosting_Plan MODIFY Description DEFAULT 'N/A';
+
+PHA_Link Table:
+ALTER TABLE PHA_Link MODIFY Account_Status NOT NULL;
+ALTER TABLE PHA_Link MODIFY Plan_ID NOT NULL;

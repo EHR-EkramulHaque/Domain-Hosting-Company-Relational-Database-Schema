@@ -1,0 +1,98 @@
+1. CREATE TABLE Address (
+  City VARCHAR2(50),
+  Country VARCHAR2(50),
+  CONSTRAINT PK_Address PRIMARY KEY (City)
+);
+
+DESCRIBE Address;
+  
+2. CREATE TABLE Phone_Number (
+  Customer_ID INT,
+  Phone VARCHAR2(20),
+  CONSTRAINT PK_CUSTOMER PRIMARY KEY(Customer_ID, Phone),
+);
+
+
+3. CREATE TABLE Customer (
+  Customer_ID INT,
+  Customer_Name VARCHAR2(50),
+  City VARCHAR2(50),
+  Email VARCHAR2(50),
+  Payment_Info VARCHAR2(150),
+  CONSTRAINT PK_CUSTOMER PRIMARY KEY(Customer_ID),
+  CONSTRAINT FK_Customer_City FOREIGN KEY (City) REFERENCES Address(City)
+);
+
+DESCRIBE Customer;
+
+
+4. CREATE TABLE DC_Link (
+  Domain_ID INT,
+  Customer_ID INT,
+  Domain_Name VARCHAR2(50),
+  Registration_Date DATE,
+  Expiration_Date DATE,
+  Renewal_Status VARCHAR2(50),
+  CONSTRAINT PK_DC_Link PRIMARY KEY (Domain_ID),
+  CONSTRAINT FK_DC_Link_Customer FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
+);
+
+DESCRIBE DC_Link;
+
+5. CREATE TABLE Domain (
+  Domain_ID INT,
+  Domain_Name VARCHAR2(50),
+  Expiration_Date DATE,
+  Renewal_Status VARCHAR2(50),
+  CONSTRAINT PK_Domain PRIMARY KEY (Domain_ID)
+);
+
+DESCRIBE Domain;
+
+6. CREATE TABLE Hosting_Account (
+  Account_ID INT,
+  Account_Status VARCHAR2(50),
+  CONSTRAINT PK_Hosting_Account PRIMARY KEY (Account_ID)
+);
+
+DESCRIBE Hosting_Account;
+
+7. CREATE TABLE DHA_Link (
+  Domain_ID INT,
+  Account_ID INT,
+  CONSTRAINT PK_DHA_Link PRIMARY KEY (Domain_ID, Account_ID)
+);
+
+DESCRIBE DHA_Link;
+
+8. CREATE TABLE CHA_Link (
+  Account_ID INT,
+  Customer_ID INT,
+  Account_Status VARCHAR2(50),
+  CONSTRAINT PK_CHA_Link PRIMARY KEY (Account_ID),
+  CONSTRAINT FK_CHA_Link_Customer FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
+);
+
+DESCRIBE CHA_Link;
+
+
+9. CREATE TABLE Hosting_Plan (
+  Plan_ID INT,
+  Plan_Name VARCHAR2(50),
+  Description VARCHAR2(255),
+  Price NUMBER(10,2),
+  Features VARCHAR2(255),
+  CONSTRAINT PK_Hosting_Plan PRIMARY KEY (Plan_ID)
+);
+
+DESCRIBE Hosting_Plan;
+
+
+10. CREATE TABLE PHA_Link (
+  Account_ID INT CONSTRAINT PK_PHA_Link PRIMARY KEY,
+  Plan_ID INT,
+  Account_Status VARCHAR2(50),
+  CONSTRAINT FK_PHA_Link_Plan_ID FOREIGN KEY (Plan_ID) REFERENCES Hosting_Plan(Plan_ID)
+);
+
+DESCRIBE PHA_Link;
